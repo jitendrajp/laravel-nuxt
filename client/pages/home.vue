@@ -1,11 +1,18 @@
 <template>
-  <card :title="$t('home')">
-    {{ $t('you_are_logged_in') }}
-  </card>
+  <div>
+    <card :title="$t('home')">
+      {{ $t('you_are_logged_in') }}
+    </card>
+    <Users />
+  </div>
 </template>
 
 <script>
+import Users from './users'
+
 export default {
+  components: { Users },
+
   middleware: 'auth',
 
   head () {
